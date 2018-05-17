@@ -13,11 +13,7 @@ void init_struct(server_t *server)
 {
 	server->currentSize = 0;
 	server->nbChannels = 0;
-	server->channels[0].nbCLient = 0;
-	server->channels[0].roomName = NULL;
-	server->channels[0].id = server->nbChannels;
-	server->channels[0].status = NONE;
-	server->nbChannels++;
+	server->nbclients = 0;
 }
 
 int main(int ac, char **av)

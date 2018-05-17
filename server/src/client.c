@@ -7,6 +7,15 @@
 
 #include "../include/server.h"
 
+int *get_client_roomid_by_socket(server_t *server, SOCKET socket)
+{
+	for (int i = 0; i < server->nbclients; i++) {
+		if (server->clients[i].sockCLient == socket)
+			return server->clients[i].roomId;
+	}
+	return NULL;
+}
+
 SOCKET get_client_socket_by_name(server_t *server, char *name)
 {
 	for (int i = 0; i < server->nbclients; i++) {
@@ -16,11 +25,11 @@ SOCKET get_client_socket_by_name(server_t *server, char *name)
 	return -1;
 }
 
-client_t get_static_client_by_socket(server_t *server, SOCKET socket)
+client_t *get_client_by_socket(server_t *server, SOCKET socket)
 {
 	for (int i = 0; i < server->nbclients; i++) {
 		if (server->clients[i].sockCLient == socket)
-			return server->clients[i];
+			return &server->clients[i];
 	}
 	return NULL;
 }
