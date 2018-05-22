@@ -105,6 +105,7 @@ int count_nb_args(char *msg);
 char *get_arg_value(char *arg, int pos);
 char *substr(char *src, int pos, int len);
 char *delete_useles_char(char c, char *str);
+char *my_concat(char *str1, char *str2);
 
 /*
  * broadcast.c

@@ -10,6 +10,7 @@
 bool connect_new_client(server_t *server, nfds_t *nfds)
 {
 	int newSock = -1;
+	char *resp = create_response("020", NULL, " * ", "Please wait while we process your connection.");
 
 	while (newSock == -1) {
 		newSock = accept(server->socketServer, NULL, NULL);
@@ -28,6 +29,7 @@ bool connect_new_client(server_t *server, nfds_t *nfds)
 		server->clients[server->nbclients].nb_rooms = 0;
 		server->clients[server->nbclients].nickName = NULL;
 		server->nbclients++;
+		send(newSock, resp, strlen(resp), 0);
 	}
 	return true;
 }

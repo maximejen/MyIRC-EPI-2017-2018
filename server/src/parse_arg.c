@@ -59,3 +59,13 @@ char *substr(char *src, int pos, int len)
 	}
 	return dest;
 }
+
+char *my_concat(char *str1, char *str2)
+{
+	char *newstr = malloc(sizeof(char) * (strlen(str1) + strlen(str2)));
+
+	newstr[0] = 0;
+	newstr = strcat(newstr, str1);
+	newstr = strcat(newstr, str2);
+	return newstr;
+}

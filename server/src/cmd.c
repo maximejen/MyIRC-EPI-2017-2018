@@ -53,8 +53,7 @@ bool join_channel(server_t *server, SOCKET socket)
 	name = substr(name, 1, (int)strlen(name));
 	move_user_to_room(server, socket, name);
 	list_users_in_channel(server, socket);
-	send_to_all_clients(server, "Client connected", get_room_id_by_name(server, name));
-
+	send_to_all_clients(server, my_concat(get_client_name_by_socket(server, socket), " is connected"), get_room_id_by_name(server, name));
 	return true;
 }
 
@@ -69,9 +68,11 @@ bool disconnect(server_t *server, SOCKET socket)
 		return send_error(create_response("476", NULL, "JOIN", "Bad channel mask"), socket);
 	room = substr(room, 1, (int)strlen(room));
 	int roomid = get_room_id_by_name(server, room);
+	if (roomid == -1)
+		return send_error(create_response("403", NULL, room, "No such channel"), socket);
 	if (!delete_room_in_client_list(roomid, get_client_by_socket(server, socket)))
-		send_error(ERR_NOTONCHANNEL, socket);
-	send_to_all_clients(server, "Client disconnected", roomid);
+		return send_error(create_response("442", NULL, room, "You're not on that channel"), socket);
+	send_to_all_clients(server, my_concat(get_client_name_by_socket(server, socket), " disconnected"), roomid);
 	return true;
 }
 
@@ -82,7 +83,6 @@ bool list_users_connected(server_t *server, SOCKET socket)
 		send(socket, " ", 1, 0);
 	}
 	send(socket, "\n", 1, 0);
-
 	return true;
 }
 

@@ -33,9 +33,7 @@ bool send_to_channel(server_t *server, char *channel, int socket)
 	channel = substr(channel, 1, (int)strlen(channel));
 	int id_channel = get_room_id_by_name(server, channel);
 
-	if (!is_client_in_room(id_channel, get_client_by_socket(server, socket)))
-		return send_error(create_response("404", NULL, channel, "Cannot send to channel"), socket);
-	char * nickname = get_client_name_by_socket(server, socket);
+	char *nickname = get_client_name_by_socket(server, socket);
 
 	send_to_all_clients(server, get_message(server, nickname), id_channel);
 	return true;
