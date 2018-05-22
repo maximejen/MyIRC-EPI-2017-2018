@@ -35,7 +35,7 @@ public:
     QListView *peopleList;
     QLabel *label;
     QLabel *label_2;
-    QTextEdit *sendText_2;
+    QTextEdit *channelText;
     QPushButton *connectBtn;
     QLabel *label_3;
     QPushButton *quitChannelBtn;
@@ -84,9 +84,9 @@ public:
         font1.setBold(true);
         font1.setWeight(75);
         label_2->setFont(font1);
-        sendText_2 = new QTextEdit(centralWidget);
-        sendText_2->setObjectName(QStringLiteral("sendText_2"));
-        sendText_2->setGeometry(QRect(650, 50, 621, 551));
+        channelText = new QTextEdit(centralWidget);
+        channelText->setObjectName(QStringLiteral("channelText"));
+        channelText->setGeometry(QRect(650, 50, 621, 551));
         connectBtn = new QPushButton(centralWidget);
         connectBtn->setObjectName(QStringLiteral("connectBtn"));
         connectBtn->setGeometry(QRect(10, 10, 251, 31));
