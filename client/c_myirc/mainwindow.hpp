@@ -2,6 +2,8 @@
 #define MAINWINDOW_HPP
 
 #include <QMainWindow>
+#include <QTimer>
+#include <ApiConnection.hpp>
 
 namespace Ui {
 class MainWindow;
@@ -17,6 +19,11 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    ApiConnection server;
+    QTimer timer;
+
+private slots:
+    void clickConnectBtn();
 };
 
 #endif // MAINWINDOW_HPP

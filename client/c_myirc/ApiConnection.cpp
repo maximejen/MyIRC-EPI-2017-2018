@@ -15,12 +15,8 @@
 #include "ApiConnection.hpp"
 #include "../../server/include/server.h"
 
-ApiConnection::ApiConnection(const std::string &ip, int port)
+ApiConnection::ApiConnection()
 {
-	if (connectToServer(ip, port)) {
-		this->ip = ip;
-		this->port = port;
-	}
 }
 
 ApiConnection::~ApiConnection()
@@ -67,5 +63,5 @@ const std::string &ApiConnection::sendCommand(const std::string &command)
 		if (rc)
 			ret += result;
 	}
-	return ret;
+    return ret;
 }

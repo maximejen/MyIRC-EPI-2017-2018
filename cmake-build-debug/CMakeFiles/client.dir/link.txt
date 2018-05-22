@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/client.dir/client/c_myirc/mainwindow.cpp.o CMakeFiles/client.dir/client/c_myirc/ApiConnection.cpp.o  -o client 

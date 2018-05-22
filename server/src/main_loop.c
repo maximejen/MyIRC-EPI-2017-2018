@@ -10,8 +10,8 @@
 bool connect_new_client(server_t *server, nfds_t *nfds)
 {
 	int newSock = -1;
+	char *resp = create_response("020", NULL, " * ", "Please wait while we process your connection.");
 
-	client_t client;
 	while (newSock == -1) {
 		newSock = accept(server->socketServer, NULL, NULL);
 		if (newSock < 0) {
@@ -24,12 +24,24 @@ bool connect_new_client(server_t *server, nfds_t *nfds)
 		server->fds[*nfds].fd = newSock;
 		server->fds[*nfds].events = POLLIN;
 		*nfds = *nfds + 1;
-		client.nickName = NULL;
-		client.sockCLient = newSock;
+		server->clients[server->nbclients].sockCLient = newSock;
+		init_client_arr(server);
+		server->clients[server->nbclients].nb_rooms = 0;
+		server->clients[server->nbclients].nickName = NULL;
+		server->nbclients++;
+		send(newSock, resp, strlen(resp), 0);
 	}
 	return true;
 }
 
+bool is_valid_request(server_t *server)
+{
+	if (strlen(server->buffer) == 2) {
+		if (server->buffer[0] == '\r' && server->buffer[1] == '\n')
+			return false;
+	}
+	return true;
+}
 
 
 bool read_data(server_t *server, int i, int rc, nfds_t nfds)
@@ -37,6 +49,7 @@ bool read_data(server_t *server, int i, int rc, nfds_t nfds)
 	int len = 0;
 
 	printf("Desciptor %d is readable\n", server->fds[i].fd);
+	memset(server->buffer, 0, BUFFERSIZE);
 	rc = (int)recv(server->fds[i].fd, server->buffer, sizeof(server->buffer), 0);
 	if (rc < 0) {
 		perror("recv() failed");
@@ -51,6 +64,10 @@ bool read_data(server_t *server, int i, int rc, nfds_t nfds)
 	len = rc;
 	printf(" %d bytes received\n", len);
 	printf("Read: %s\n", server->buffer);
+	printf("Size : %d\n", (int)strlen(server->buffer));
+	if (is_valid_request(server))
+		execute_cmd(server, server->fds[i].fd);
+	memset(server->buffer, 0, BUFFERSIZE);
 	return true;
 }
 

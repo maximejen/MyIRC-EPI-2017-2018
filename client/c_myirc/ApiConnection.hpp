@@ -13,7 +13,7 @@
 
 class ApiConnection {
 public:
-	ApiConnection(const std::string &ip, int port);
+    ApiConnection();
 	~ApiConnection();
 	bool connectToServer(const std::string &ip, int port);
 	const std::string &sendCommand(const std::string &command);
