@@ -111,7 +111,7 @@
      <string>People</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="sendText_2">
+   <widget class="QTextEdit" name="channelText">
     <property name="geometry">
      <rect>
       <x>650</x>

@@ -32,11 +32,27 @@ string.h
 arpa/inet.h
 -
 
+/home/maxime/delivery/tek2/PSU/PSU_myirc_2017/server/src/broadcast.c
+../include/server.h
+/home/maxime/delivery/tek2/PSU/PSU_myirc_2017/server/include/server.h
+
 /home/maxime/delivery/tek2/PSU/PSU_myirc_2017/server/src/channels.c
 ../include/server.h
 /home/maxime/delivery/tek2/PSU/PSU_myirc_2017/server/include/server.h
 
 /home/maxime/delivery/tek2/PSU/PSU_myirc_2017/server/src/client.c
+../include/server.h
+/home/maxime/delivery/tek2/PSU/PSU_myirc_2017/server/include/server.h
+
+/home/maxime/delivery/tek2/PSU/PSU_myirc_2017/server/src/client_room_manager.c
+../include/server.h
+/home/maxime/delivery/tek2/PSU/PSU_myirc_2017/server/include/server.h
+
+/home/maxime/delivery/tek2/PSU/PSU_myirc_2017/server/src/cmd.c
+../include/server.h
+/home/maxime/delivery/tek2/PSU/PSU_myirc_2017/server/include/server.h
+
+/home/maxime/delivery/tek2/PSU/PSU_myirc_2017/server/src/cmd_manager.c
 ../include/server.h
 /home/maxime/delivery/tek2/PSU/PSU_myirc_2017/server/include/server.h
 
@@ -48,11 +64,31 @@ arpa/inet.h
 ../include/server.h
 /home/maxime/delivery/tek2/PSU/PSU_myirc_2017/server/include/server.h
 
+/home/maxime/delivery/tek2/PSU/PSU_myirc_2017/server/src/error.c
+../include/server.h
+/home/maxime/delivery/tek2/PSU/PSU_myirc_2017/server/include/server.h
+
 /home/maxime/delivery/tek2/PSU/PSU_myirc_2017/server/src/main.c
 ../include/server.h
 /home/maxime/delivery/tek2/PSU/PSU_myirc_2017/server/include/server.h
 
 /home/maxime/delivery/tek2/PSU/PSU_myirc_2017/server/src/main_loop.c
+../include/server.h
+/home/maxime/delivery/tek2/PSU/PSU_myirc_2017/server/include/server.h
+
+/home/maxime/delivery/tek2/PSU/PSU_myirc_2017/server/src/message_format.c
+../include/server.h
+/home/maxime/delivery/tek2/PSU/PSU_myirc_2017/server/include/server.h
+
+/home/maxime/delivery/tek2/PSU/PSU_myirc_2017/server/src/parse_arg.c
+../include/server.h
+/home/maxime/delivery/tek2/PSU/PSU_myirc_2017/server/include/server.h
+
+/home/maxime/delivery/tek2/PSU/PSU_myirc_2017/server/src/send_msg.c
+../include/server.h
+/home/maxime/delivery/tek2/PSU/PSU_myirc_2017/server/include/server.h
+
+/home/maxime/delivery/tek2/PSU/PSU_myirc_2017/server/src/user_cmd.c
 ../include/server.h
 /home/maxime/delivery/tek2/PSU/PSU_myirc_2017/server/include/server.h
 

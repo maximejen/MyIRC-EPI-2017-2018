@@ -48,7 +48,7 @@ bool ApiConnection::connectToServer(const std::string &ip, int port)
 
 const std::string &ApiConnection::sendCommand(const std::string &command)
 {
-	std::string ret = "";
+	std::string ret;
 	struct pollfd fds[1];
 	nfds_t nfds = 1;
 	int rc;
@@ -60,8 +60,8 @@ const std::string &ApiConnection::sendCommand(const std::string &command)
 		perror("Poll() failed");
 	} else if (rc > 0) {
 		rc = static_cast<int>(read(this->sock, result, 1999));
-		if (rc)
+		if (rc > 0)
 			ret += result;
 	}
-    return ret;
+	return ret;
 }

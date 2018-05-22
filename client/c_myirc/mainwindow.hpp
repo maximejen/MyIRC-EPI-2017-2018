@@ -24,6 +24,7 @@ private:
 
 private slots:
     void clickConnectBtn();
+    void refreshChannelsList();
 };
 
 #endif // MAINWINDOW_HPP
