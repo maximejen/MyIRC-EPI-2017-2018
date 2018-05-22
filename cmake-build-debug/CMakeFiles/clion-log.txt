@@ -1,4 +1,0 @@
-/home/maxime/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/181.4668.70/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/maxime/delivery/tek2/PSU/PSU_myirc_2017
--- Configuring done
--- Generating done
--- Build files have been written to: /home/maxime/delivery/tek2/PSU/PSU_myirc_2017/cmake-build-debug

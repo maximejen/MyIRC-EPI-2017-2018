@@ -12,30 +12,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1df2a022-252b-4916-9dd6-a90828cb1eca" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build-c_myirc-KIT-Debug/ApiConnection.o" beforeDir="false" afterPath="$PROJECT_DIR$/client/build-c_myirc-KIT-Debug/ApiConnection.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build-c_myirc-KIT-Debug/c_myirc" beforeDir="false" afterPath="$PROJECT_DIR$/client/build-c_myirc-KIT-Debug/c_myirc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build-c_myirc-KIT-Debug/mainwindow.o" beforeDir="false" afterPath="$PROJECT_DIR$/client/build-c_myirc-KIT-Debug/mainwindow.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build-c_myirc-KIT-Debug/moc_mainwindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/client/build-c_myirc-KIT-Debug/moc_mainwindow.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build-c_myirc-KIT-Debug/moc_mainwindow.o" beforeDir="false" afterPath="$PROJECT_DIR$/client/build-c_myirc-KIT-Debug/moc_mainwindow.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build-c_myirc-KIT-Debug/ui_mainwindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/client/build-c_myirc-KIT-Debug/ui_mainwindow.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/c_myirc/ApiConnection.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/client/c_myirc/ApiConnection.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/c_myirc/c_myirc.pro.user" beforeDir="false" afterPath="$PROJECT_DIR$/client/c_myirc/c_myirc.pro.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/c_myirc/mainwindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/client/c_myirc/mainwindow.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/c_myirc/mainwindow.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/client/c_myirc/mainwindow.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/c_myirc/mainwindow.ui" beforeDir="false" afterPath="$PROJECT_DIR$/client/c_myirc/mainwindow.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/count.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/server/src/channels.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/server/src/channels.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/server/src/connexion.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/server/src/connexion.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/server/src/create_server.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/server/src/create_server.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/server/src/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/server/src/main.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/server/src/main_loop.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/server.dir/server/src/main_loop.c.o" afterDir="false" />
-    </list>
+    <list default="true" id="1df2a022-252b-4916-9dd6-a90828cb1eca" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,7 +28,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
-              <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+              <caret line="1" column="5" lean-forward="true" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -65,6 +42,11 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Maxime JENNY &lt;maxime.jenny@epitech.eu&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -208,16 +190,23 @@
       <workItem from="1527022388501" duration="117000" />
       <workItem from="1527022527454" duration="64000" />
       <workItem from="1527022611334" duration="93000" />
-      <workItem from="1527022719564" duration="488000" />
+      <workItem from="1527022719564" duration="803000" />
     </task>
+    <task id="LOCAL-00001" summary="push the begin of part with QT">
+      <created>1527023241785</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1527023241785</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20277000" />
+    <option name="totallyTimeSpent" value="20592000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1023" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24881391" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -245,6 +234,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="push the begin of part with QT" />
+    <option name="LAST_COMMIT_MESSAGE" value="push the begin of part with QT" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/server/src/client.c">
@@ -592,7 +585,7 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+          <caret line="1" column="5" lean-forward="true" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
         </state>
       </provider>
     </entry>
