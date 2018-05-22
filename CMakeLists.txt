@@ -1,4 +1,4 @@
-project(PSU_ftrace_2017)
+project(PSU_myirc_2017)
 
 add_executable(server
         server/src/main.c
