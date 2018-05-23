@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include <QTimer>
-#include <ApiConnection.hpp>
+#include "ApiConnection.hpp"
 
 namespace Ui {
 class MainWindow;
@@ -21,10 +21,14 @@ private:
     Ui::MainWindow *ui;
     ApiConnection server;
     QTimer timer;
+    std::string actualChannel;
+    std::vector<std::string>& explode(const std::string& str);
 
 private slots:
     void clickConnectBtn();
     void refreshChannelsList();
+    void leaveChannel();
+    void refreshPeopleList();
 };
 
 #endif // MAINWINDOW_HPP

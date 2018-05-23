@@ -15,7 +15,7 @@
 #include "ApiConnection.hpp"
 #include "../../server/include/server.h"
 
-ApiConnection::ApiConnection()
+ApiConnection::ApiConnection() : sock(0)
 {
 }
 
@@ -46,22 +46,29 @@ bool ApiConnection::connectToServer(const std::string &ip, int port)
 	return true;
 }
 
-const std::string &ApiConnection::sendCommand(const std::string &command)
+std::string ApiConnection::sendCommand(const std::string &command)
 {
 	std::string ret;
 	struct pollfd fds[1];
 	nfds_t nfds = 1;
 	int rc;
-	char result[2000] = {0};
+	char result[4096] = {0};
 
+	if (!this->isConnected())
+		return ret;
 	dprintf(this->sock, "%s\n", command.c_str());
-	rc = poll(fds, nfds, 1);
+	rc = poll(fds, nfds, 1000);
 	if (rc < 0) {
 		perror("Poll() failed");
-	} else if (rc > 0) {
-		rc = static_cast<int>(read(this->sock, result, 1999));
-		if (rc > 0)
-			ret += result;
-	}
+	} else if (rc > 0)
+		rc = static_cast<int>(read(this->sock, result, 4095));
+	result[rc] = 0;
+	ret = result;
+    std::cout << ret << std::endl;
 	return ret;
+}
+
+bool ApiConnection::isConnected()
+{
+	return this->sock != 0;
 }

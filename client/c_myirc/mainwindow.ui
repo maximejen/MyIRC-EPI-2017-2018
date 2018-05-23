@@ -50,16 +50,6 @@
      <enum>Qt::Vertical</enum>
     </property>
    </widget>
-   <widget class="QListView" name="channelList">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>90</y>
-      <width>251</width>
-      <height>621</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QListView" name="peopleList">
     <property name="geometry">
      <rect>
@@ -204,6 +194,16 @@
     </property>
     <property name="text">
      <string>Clear channel</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="channelList">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>90</y>
+      <width>261</width>
+      <height>621</height>
+     </rect>
     </property>
    </widget>
   </widget>

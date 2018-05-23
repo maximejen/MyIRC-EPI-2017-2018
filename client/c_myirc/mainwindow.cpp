@@ -1,5 +1,6 @@
 #include <QInputDialog>
 #include <QMessageBox>
+#include <QString>
 #include <cstring>
 #include <regex>
 #include <iostream>
@@ -22,7 +23,11 @@ MainWindow::MainWindow(QWidget *parent) :
 	MainWindow::connect(ui->connectBtn, SIGNAL(clicked()), this,
 		SLOT(clickConnectBtn()));
 	//connect(&this->timer, SIGNAL(timeout()), this, SLOT(fillResultText()));
-    connect(this->ui->refreshChannelBtn, SIGNAL(clicked()), this, SLOT(refreshChannelsList()));
+	MainWindow::connect(this->ui->refreshChannelBtn, SIGNAL(clicked()),
+		this,
+		SLOT(refreshChannelsList()));
+	MainWindow::connect(this->ui->quitChannelBtn, SIGNAL(clicked()), this,
+		SLOT(leaveChannel()));
 	this->timer.start(1000);
 }
 
@@ -43,17 +48,21 @@ void MainWindow::clickConnectBtn()
 			pos - connectString.c_str());
 		std::string port = connectString.substr(
 			pos + 1 - connectString.c_str(), connectString.size());
-		QMessageBox::information(this, "args",
-			QString::fromStdString(ip + "\n" + port));
 		if (std::stoi(port) <= 65535 &&
 			std::regex_match(ip, std::regex(REGEX))) {
-			QMessageBox::information(this, "args",
-				"The IP address and the PORT are Valid.");
 			this->server.connectToServer(ip, std::stoi(port));
+			if (!this->server.isConnected()) {
+				QMessageBox::information(this, "Error",
+					"Cannot connect to server");
+				return;
+			}
 			QString nick = QInputDialog::getText(this, "Nickname",
 				"what is your nickname?\n");
-			this->server.sendCommand(
-				std::string("nick " + nick.toStdString()));
+			if (nick != "") {
+				this->server.sendCommand(
+					std::string(
+						"nick " + nick.toStdString()));
+			}
 		}
 	}
 	catch (const std::exception &e) {
@@ -63,6 +72,47 @@ void MainWindow::clickConnectBtn()
 
 void MainWindow::refreshChannelsList()
 {
-    std::string res = this->server.sendCommand("LIST");
-    this->ui->channelText->append(QString::fromStdString(res));
+	if (!this->server.isConnected())
+        return;
+    auto res = this->server.sendCommand("LIST");
+	if (res != "") {
+		auto tab = this->explode(res);
+		if (tab.size() == 0)
+			return;
+		this->ui->channelList->clear();
+		for (const auto &i : tab) {
+			this->ui->channelList->addItem(
+				QString::fromStdString(i));
+		}
+	}
+}
+
+void MainWindow::leaveChannel()
+{
+	if (!this->server.isConnected())
+		return;
+	if (this->actualChannel != "") {
+        this->server.sendCommand("PART " + this->actualChannel);
+		this->ui->channelText->append(QString::fromStdString(
+			"Leaved channel #" + this->actualChannel));
+		this->actualChannel = "";
+	}
+}
+
+void MainWindow::refreshPeopleList()
+{
+	if (!this->server.isConnected())
+		return;
+	std::string res = this->server.sendCommand("USERS");
+	//this->ui->peopleList->append(QString::fromStdString(res));
+}
+
+std::vector<std::string> &MainWindow::explode(const std::string &str)
+{
+	//std::string str("abc:def:ghi:jkl"); -> exemple
+	std::istringstream split(str); // flux d'exatraction sur un std::string
+	std::vector<std::string> tokens;
+	for (std::string each ; std::getline(split, each,
+		':') ; tokens.push_back(each));
+	return tokens;
 }

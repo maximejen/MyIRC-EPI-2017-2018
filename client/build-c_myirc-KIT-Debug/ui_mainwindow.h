@@ -17,6 +17,7 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QListView>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTextEdit>
@@ -31,7 +32,6 @@ public:
     QTextEdit *sendText;
     QPushButton *sendBtn;
     QFrame *line;
-    QListView *channelList;
     QListView *peopleList;
     QLabel *label;
     QLabel *label_2;
@@ -42,6 +42,7 @@ public:
     QPushButton *refreshChannelBtn;
     QPushButton *peopleChannelBtn;
     QPushButton *clearChannleBtn;
+    QListWidget *channelList;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -61,9 +62,6 @@ public:
         line->setGeometry(QRect(630, 0, 20, 721));
         line->setFrameShape(QFrame::VLine);
         line->setFrameShadow(QFrame::Sunken);
-        channelList = new QListView(centralWidget);
-        channelList->setObjectName(QStringLiteral("channelList"));
-        channelList->setGeometry(QRect(10, 90, 251, 621));
         peopleList = new QListView(centralWidget);
         peopleList->setObjectName(QStringLiteral("peopleList"));
         peopleList->setGeometry(QRect(270, 90, 361, 621));
@@ -106,6 +104,9 @@ public:
         clearChannleBtn = new QPushButton(centralWidget);
         clearChannleBtn->setObjectName(QStringLiteral("clearChannleBtn"));
         clearChannleBtn->setGeometry(QRect(1020, 10, 111, 31));
+        channelList = new QListWidget(centralWidget);
+        channelList->setObjectName(QStringLiteral("channelList"));
+        channelList->setGeometry(QRect(5, 90, 261, 621));
         MainWindow->setCentralWidget(centralWidget);
 
         retranslateUi(MainWindow);
